@@ -7,6 +7,7 @@ public class test2 {
 		System.out.println("이해하신사람 이름 작성 : 전준엽 ");
 		System.out.println("이해하신사람 이름 작성 : 정용현 ");
 		System.out.println("이해하신사람 이름 작성 : 송호영 ");
+		System.out.println("이해하신사람 이름 작성 : 김우성 ");
 		System.out.println("김가연");
 		
 
