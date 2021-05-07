@@ -9,7 +9,7 @@ public class test2 {
 		System.out.println("이해하신사람 이름 작성 : 송호영 ");
 		System.out.println("이해하신사람 이름 작성 : 송호영 ");
 		System.out.println("이해하신사람 이름 작성 : 정진우 ");
-		System.out.println("이해하신사람 이름 작성 : 김가연");
+		System.out.println("이해하신사람 이름 작성 : 김가연 ");
 		
 
 	}
