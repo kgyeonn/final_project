@@ -57,7 +57,8 @@ public class RankDAO {
 					   int get_totalPoint = rs.getInt(2);
 					   int get_countId = rs.getInt(3);
 					   
-					   vo = new RankVO(get_region, get_totalPoint, get_countId);
+					   vo = new MemberVO(get_region,get_totalPoint,get_countId);
+					
 							   }
 			   
 				   
