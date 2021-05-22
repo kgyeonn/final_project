@@ -1,4 +1,4 @@
-package com;
+package project3;
 
 public class MemberVO {
    
