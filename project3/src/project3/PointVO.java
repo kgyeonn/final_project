@@ -1,6 +1,7 @@
 package project3;
 
 public class PointVO {
+
 	private String member_id;
 	private int point_p;
 	private int point_sum;

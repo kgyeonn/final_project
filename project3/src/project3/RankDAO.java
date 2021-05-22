@@ -47,16 +47,17 @@ public class RankDAO {
 		   public void rankpoint(MemberVO vo) {
 			   conn();
 			   try {
-				   String sql = "SELECT SUM(MEMBER_POINT), COUNT(MEMBER_ID) FROM MEMBER WHERE REGION='±¤»ê±¸'";
+				   String sql = "select member_region, sum(member_point),count(member_id) from member group by member_region order by sum(member_point) desc;";
 				   
 				   pst = conn.prepareStatement(sql);
 				   rs = pst.executeQuery();
 				   
 				   if(rs.next()) {
-					   int get_totalPoint = rs.getInt(1);
-					   int get_countId = rs.getInt(2);
+					   String get_region = rs.getString(1);
+					   int get_totalPoint = rs.getInt(2);
+					   int get_countId = rs.getInt(3);
 					   
-					   vo = new RankVO(get_totalPoint,get_countId);
+					   vo = new RankVO(get_region, get_totalPoint, get_countId);
 							   }
 			   
 				   
