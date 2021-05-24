@@ -9,42 +9,34 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.google.gson.Gson;
 
-@WebServlet("/pointselect")
-public class pointselect extends HttpServlet {
 
+@WebServlet("/RankController")
+public class RankController extends HttpServlet {
+	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
 		response.setCharacterEncoding("EUC-KR");
-		
 		response.setContentType("text/plain; charset = utf-8");
-		
+	
 		//ArrayList 객체생성 -> JSON객체로 변환
-		ArrayList<PointVO> data = new ArrayList<PointVO>();
-		String member_id = request.getParameter("id");
+		ArrayList<RankVO> data = new ArrayList<RankVO>();
 		
-		PointDAO dao = new PointDAO();
+		RankDAO dao = new RankDAO();
+		data = dao.select();
 		
-		dao.select(member_id);
-		
-		data.addAll(dao.select(member_id));
 		
 		//GSON 객체 생성
 		Gson gson = new Gson();
-		
 		String jsonArr = gson.toJson(data);
-		
 		System.out.println(jsonArr);
 		
-		//App 으로 JSON데이터 보내기
-		response.setContentType("text/plain; charset = utf-8");
+		//App으로 JSON데이터 보내기
+		response.setContentType("text/plainl charset=utf-8");
 		PrintWriter out = response.getWriter();
-		
-		out.print(jsonArr);
-	
-	
+		out.println(jsonArr);
 	}
 
 }
