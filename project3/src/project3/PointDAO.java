@@ -91,11 +91,12 @@ public class PointDAO {
 			while(rs.next()) {
 				String id = rs.getString(1);
 				int point = rs.getInt(2);
-				point_sum += point;
 				String date = rs.getString(3);
 				String content = rs.getString(4);
 				
-				pvo = new PointVO(id, point, point_sum, date, content);
+//				point_sum += point;
+				
+				pvo = new PointVO(id, point, date, content);
 				pList.add(pvo);
 				
 				
