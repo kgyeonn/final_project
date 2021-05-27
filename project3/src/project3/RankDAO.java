@@ -61,6 +61,7 @@ public class RankDAO {
 
 				rvo = new RankVO(get_region, get_totalPoint, get_countId);
 				rList.add(rvo);
+				System.out.println(rList);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
