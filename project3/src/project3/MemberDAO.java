@@ -5,12 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 
 public class MemberDAO {
    private Connection conn;
    private PreparedStatement pst;
    private ResultSet rs;
    private int cnt,cnt1;
+   
    
    public void conn() {
       try {
@@ -86,8 +89,10 @@ public class MemberDAO {
       
    }
    
-   public MemberVO login(String member_id, String member_pw) {
+   public ArrayList<MemberVO> login(String member_id, String member_pw) {
       conn();
+      
+      ArrayList<MemberVO> loginInfoList=new ArrayList<MemberVO>();
       
       MemberVO vo = null;
       
@@ -105,7 +110,13 @@ public class MemberDAO {
             String get_region = rs.getString(4);
             int get_point = rs.getInt(5);
             
+            
             vo = new MemberVO(get_id, get_pw, get_phone, get_region, get_point);
+            
+            loginInfoList.add(vo);
+            System.out.println(get_id+get_point);
+            //System.out.println(loginInfoList);
+            
          }
          
       } catch (SQLException e) {
@@ -115,8 +126,10 @@ public class MemberDAO {
          close();
       }
       
-      return vo;
+      return loginInfoList;
    
    }
+
+   
 
 }
