@@ -15,12 +15,12 @@ public class MemberVO {
    }
 
 
-   public MemberVO(String member_id, String member_pw, String member_phone, String member_region) {
+   public MemberVO(String member_pw, String member_phone, String member_region, String member_id ) {
       
-      this.member_id = member_id;
       this.member_pw = member_pw;
       this.member_phone = member_phone;
       this.member_region = member_region;
+      this.member_id = member_id;
    }
 
 
